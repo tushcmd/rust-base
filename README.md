@@ -1,0 +1,68 @@
+# Rust-base code layout
+
+This is an opinionated way to start a rust project
+
+## Initialise the project
+
+Initialise a rust project in the current folder
+
+```bash
+cargo init
+```
+
+This is how `cargo.toml` looks like initially
+
+```toml
+[package]
+name = "rust-base"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+```
+
+### Dependencies
+
+Dependencies to add
+First we add thiserror for error handling under dependencies
+
+```toml
+thiserror = "1"
+```
+
+If you intend to use async add tokio
+
+```toml
+tokio = { version = "1", features = ["full"] }
+```
+
+If you are doing a command line interface you may use
+
+```toml
+clap = { version = "4", features = ["cargo"] }
+```
+
+### Dev dependencies
+
+Add dev dependencies
+anyhow - good for unit tests, examples and benchmarks
+
+```toml
+[dev-dependencies]
+anyhow = "1"
+```
+
+### Full `cargo.toml` file
+
+```toml
+[package]
+name = "rust-base"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+
+[dev-dependencies]
+anyhow = "1"
+```
