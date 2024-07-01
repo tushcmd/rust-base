@@ -1,19 +1,12 @@
 #![allow(unused)] // For beginnesr only - tush doesn't need this
 
-use crate::prelude::*;
-use std::fs::read_dir;
-
 // Create a crate error
 mod error;
 mod prelude;
 mod utils;
 
-fn main() -> Result<()> {
+fn main() -> Result<()>{
     println!("Hello Tush");
-
-    for entry in read_dir("./")?.filter_map(|e| e.ok()) {
-        println!("{entry:?}");
-    }
 
     Ok(())
 }

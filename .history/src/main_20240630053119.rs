@@ -8,13 +8,13 @@ mod error;
 mod prelude;
 mod utils;
 
-fn main() -> Result<()> {
+fn main() -> Result<()>{
     println!("Hello Tush");
 
     for entry in read_dir("./")?.filter_map(|e| e.ok()) {
         println!("{entry:?}");
     }
-
+    
     Ok(())
 }
 
